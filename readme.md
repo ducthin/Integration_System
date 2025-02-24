@@ -6,7 +6,7 @@ A web-based dashboard application for managing HR and Payroll systems.
 
 - User-friendly web interface
 - RESTful API backend using Express.js
-- MySQL database integration
+- MySQL database integration with MySQL Workbench support
 - Secure environment configuration
 - Cross-Origin Resource Sharing (CORS) support
 
@@ -15,7 +15,30 @@ A web-based dashboard application for managing HR and Payroll systems.
 Before you begin, ensure you have the following installed:
 - Node.js (v14 or higher)
 - MySQL Server
+- MySQL Workbench
 - Git
+
+## Database Setup
+
+1. Open MySQL Workbench and connect to your MySQL Server
+2. Create two databases:
+```sql
+CREATE DATABASE hr_system;
+CREATE DATABASE payroll_system;
+```
+
+3. Configure your database connection in MySQL Workbench:
+   - Host: localhost
+   - Port: 3306
+   - Username: root (or your custom username)
+   - Password: your_password
+
+4. You can manage and monitor the databases using MySQL Workbench features:
+   - Database administration
+   - SQL development
+   - Data modeling
+   - Server monitoring
+   - User management
 
 ## Installation
 
@@ -35,7 +58,8 @@ npm install
 DB_HOST=localhost
 DB_USER=your_username
 DB_PASSWORD=your_password
-DB_NAME=your_database_name
+HR_DB_NAME=hr_system
+PAYROLL_DB_NAME=payroll_system
 PORT=3000
 ```
 
@@ -66,6 +90,26 @@ hr-payroll-dashboard/
 ├── package.json        # Project dependencies
 └── .env               # Environment variables (create this)
 ```
+
+## Database Schema
+
+### HR System Database (hr_system)
+Contains tables related to employee management, including:
+- Employee information
+- Departments
+- Positions
+- Leave records
+- Performance reviews
+
+### Payroll System Database (payroll_system)
+Contains tables related to payroll processing, including:
+- Salary information
+- Allowances
+- Deductions
+- Payment records
+- Tax calculations
+
+You can view and manage these schemas using MySQL Workbench's schema designer.
 
 ## API Documentation
 
